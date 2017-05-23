@@ -1,0 +1,55 @@
+body {
+  overflow-x: hidden;
+  position: relative;
+  margin: 50px 0 100px 0;
+  box-sizing: border-box;
+  font-family: 'SimHei' !important;
+}
+.page {
+  transition:all .5s linear;
+  position: absolute;
+  width: 100%;
+}
+/*针对ngAnimate提供的动画钩子编写动画*/
+/*即将要离开的页面动画开始时的样式*/
+.page.ng-leave {
+  opacity: 1;
+  left: 0;
+}
+/*即将要离开的页面动画结束时的样式*/
+.page.ng-leave.ng-leave-active {
+  opacity: 0;
+  left: -100%;
+}
+/*即将要进入的页面动画开始时的样式*/
+.page.ng-enter {
+  opacity: 0;
+  left: 100%;
+}
+/*即将要进入的页面动画结束时的样式*/
+.page.ng-enter.ng-enter-active {
+  opacity: 1;
+  left: 0;
+}
+.navbar-link {
+  line-height: 50px !important;
+}
+.table td {
+  vertical-align: middle !important;
+}
+.price {
+  border-top: 1px solid #eee;
+  color: #ff0a33;
+  padding-top: 5px;
+  font-size: 1.2em;
+}
+@media screen and (max-width: 767px){
+  .boot_img{
+    max-width: 60% !important;
+  }
+}
+@media screen and (min-width: 768px){
+  .boot_img{
+    max-width: 100%;
+  }
+}

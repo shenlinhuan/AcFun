@@ -1,0 +1,34 @@
+<div ng-include=" 'tpl/include/header.html' "></div>
+<div class="container">
+	<br>
+	<form>
+		 <div class="form-group has-feedback">
+		 	<label for="kw" class="sr-only" class="control-label">请输入搜索关键字</label>
+		 	<input type="search" class="form-control" id="kw" placeholder="搜索菜品名称和原料..." ng-model="kw">
+		 	<span class="form-control-feedback glyphicon glyphicon-search"></span>
+		 </div>
+	</form>
+	<div class="list-group">
+		<a ng-repeat="d in goodsList" class="list-group-item" href="#/detail/{{d.did}}">
+			<div class="media">
+		        <div class="media-left media-middle">
+		        		<img ng-src="img/{{d.img_sm}}">
+		        </div>
+		        <div class="media-body">
+		        		<h4 class="media-heading">{{d.name}}</h3>
+		        		<p>商品简介:{{d.material}}</p>
+		        		<div class="price">￥:{{d.price}}</div>
+		        </div>
+	      </div>
+		</a>
+	</div>
+	
+	<button ng-show="hasMoreData" class="btn btn-success btn-block" ng-click="loadMore()">加载更多</button>
+	<div class="alert alert-danger" ng-hide="hasMoreData">
+		<span class="glyphicon glyphicon-alert">
+	      已经没有更多数据可以加载了！
+	    </span>
+	</div>
+</div>
+<br><br><br>
+<div ng-include="'tpl/include/footer.html'"></div>
